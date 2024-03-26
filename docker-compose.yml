@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  wp-form-db:
+    image: postgres:16.1
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      TZ: GMT+8
+      PGTZ: GMT+8
+    logging:
+      options:
+        max-size: 10m
+        max-file: '3'
+    ports:
+      - '5432:5432'
